@@ -1,0 +1,33 @@
+page-organizadorDeEventos {
+  ion-title{
+    text-align: center;
+  }
+  .column {
+    float: left;
+    padding: 10px;
+  }
+  .leftbig, .rightbig {
+    width: 20%;
+  }
+  .middlebig {
+    background-color:rgba(240,238,238,0.7);
+    width: 60%;
+    text-align: center;
+  }
+  .backdrop{
+
+    background-color:rgba(0,0,0,0.6);
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100vh;
+
+
+  }
+}

@@ -1,0 +1,18 @@
+page-portada {
+
+  ion-title{
+    text-align: center;
+  }
+  .column {
+    float: left;
+    padding: 10px;
+  }
+  .leftbig, .rightbig {
+    width: 20%;
+  }
+  .middlebig {
+    background-color:rgba(240,238,238,0.7);
+    width: 60%;
+    text-align: center;
+  }
+}
