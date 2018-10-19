@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup, Validators, AbstractControl} from '@angular/form
 import { IonicPage, NavParams, ViewController} from 'ionic-angular';
 
 /**
- * Generated class for the ModalPage page.
+ * Generated class for the ModalComentariosPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,37 +11,37 @@ import { IonicPage, NavParams, ViewController} from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-modal',
-  templateUrl: 'modal.html',
+  selector: 'page-modal-comentarios',
+  templateUrl: 'modal-comentarios.html',
 })
-export class ModalPage {
+export class ModalComentariosPage {
 
   formgroup:FormGroup;
   nombre:AbstractControl;
-  tipo:AbstractControl;
-  lugar:AbstractControl;
-  fecha:AbstractControl;
-  aforo:AbstractControl;
-  precio:AbstractControl;
+  nombreEvento:AbstractControl;
+  asunto:AbstractControl;
+  contacto:AbstractControl;
+  comentario:AbstractControl;
+
 
   constructor(private navParams: NavParams,
     private view:ViewController,
     private formbuilder:FormBuilder ) {
       this.formgroup = formbuilder.group({
+        nombreEvento:['',[Validators.required,Validators.maxLength(100)]],
         nombre:['',[Validators.required,Validators.maxLength(100)]],
-        tipo:['',[Validators.required,Validators.maxLength(100)]],
-        lugar:['',[Validators.required,Validators.maxLength(100)]],
-        fecha:['',Validators.required],
-        aforo:['',[Validators.required,Validators.maxLength(100)]],
-        precio:['']
+        asunto:['',[Validators.required,Validators.maxLength(100)]],
+        contacto:['',Validators.pattern("/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/")],
+        comentario:['',[Validators.required,Validators.maxLength(100)]]
+
       });
 
+      this.nombreEvento = this.formgroup.controls['nombreEvento'];
       this.nombre = this.formgroup.controls['nombre'];
-      this.tipo = this.formgroup.controls['tipo'];
-      this.lugar = this.formgroup.controls['lugar'];
-      this.fecha = this.formgroup.controls['fecha'];
-      this.aforo = this.formgroup.controls['aforo'];
-      this.precio = this.formgroup.controls['precio'];
+      this.asunto = this.formgroup.controls['asunto'];
+      this.contacto = this.formgroup.controls['contacto'];
+      this.comentario = this.formgroup.controls['comentario'];
+
   }
   closeModal(){
     this.view.dismiss();
@@ -55,4 +55,4 @@ export class ModalPage {
   }
   validate(){}
 
-}
+  }
