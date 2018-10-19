@@ -17,5 +17,46 @@
 
 
 <ion-content padding>
-<button ion-button (click)="closeModalWithSubmit()">Submit</button>
+  <form [formGroup] = "formgroup">
+    <ion-list>
+      <ion-item>
+        <ion-label>
+          Nombre de Evento:
+        </ion-label>
+        <ion-input type="text" formControlName="nombre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          Tipo de evento:
+        </ion-label>
+        <ion-input type="text" formControlName="tipo"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          Lugar:
+        </ion-label>
+        <ion-input type="text" formControlName="lugar"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          Fecha:
+        </ion-label>
+        <ion-input type="date" formControlName="fecha"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          Aforo:
+        </ion-label>
+        <ion-input type="number" formControlName="aforo"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          Precio:
+        </ion-label>
+        <ion-input type="text" formControlName="precio"></ion-input>
+      </ion-item>
+      <button clear ion-button (click)=validate()>Enviar</button>
+      <button clear ion-button (click)="closeModal()">Cerrar</button>
+    </ion-list>
+  </form>
 </ion-content>
