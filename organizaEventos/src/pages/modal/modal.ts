@@ -29,7 +29,7 @@ export class ModalPage {
   constructor(private navParams: NavParams,
     private view:ViewController,
     private formbuilder:FormBuilder,
-    //private events:ProvidersProvider
+    //private eventosDb:ProvidersProvider
     ) {
       this.formgroup = formbuilder.group({
         nombre:['',[Validators.required,Validators.maxLength(100)]],
@@ -52,8 +52,10 @@ export class ModalPage {
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad ModalPage');
+
   }
-  save(form: NgForm) {
+
+  save(form:NgForm) {
     /**let update: boolean = form['href'];
     this.events.save(form).subscribe(result => {
       let toast = this.toastCtrl.create({

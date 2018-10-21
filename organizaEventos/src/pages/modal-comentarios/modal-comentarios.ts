@@ -46,14 +46,16 @@ export class ModalComentariosPage {
   closeModal(){
     this.view.dismiss();
   }
-  closeModalWithSubmit(){
-    const data="enviarDatos"//pasar los datos y enviarlos
-    this.view.dismiss(data);
-  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad ModalPage');
   }
-  save(form: NgForm) {
+  
+  /**
+  PROX LISTAR COMENTARIOS
+
+  **/
+  save(form:NgForm) {
     /**let update: boolean = form['href'];
     this.events.save(form).subscribe(result => {
       let toast = this.toastCtrl.create({
