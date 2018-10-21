@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ModalController} from 'ionic-angular'
-
+import { ProvidersProvider } from '../../providers/providers/providers';
 @Component({
   selector: 'page-organizadorDeEventos',
   templateUrl: 'organizadorDeEventos.html'

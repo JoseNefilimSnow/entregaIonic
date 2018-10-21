@@ -14,5 +14,5 @@ public interface appServerService {
 	
 	public void put(appServer editEvent,long id);
 
-	void delete(long id);
+	public void delete(long id);
 }

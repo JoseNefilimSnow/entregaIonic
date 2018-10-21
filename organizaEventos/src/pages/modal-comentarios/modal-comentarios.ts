@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators, AbstractControl} from '@angular/forms';
 import { IonicPage, NavParams, ViewController} from 'ionic-angular';
-import { ProvidersProvider } from '../../providers/providers';
+//import { ProvidersProvider } from '../../providers/providers';
 /**
  * Generated class for the ModalComentariosPage page.
  *

@@ -17,7 +17,7 @@
 
 
 <ion-content padding>
-  <form #formgroup="ngForm" (ngSubmit)="save(formgroup.value)">
+  <form [formGroup] = "formgroup" (ngSubmit)="save(formgroup.value)">
     <ion-list>
       <ion-item>
         <ion-label>

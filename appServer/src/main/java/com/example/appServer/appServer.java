@@ -20,16 +20,16 @@ public class appServer implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idEvento;
 	
-	@NotNull
+	@NotEmpty
 	private String nombre;
 	
-	@NotNull
+	@NotEmpty
 	private String tipoEvento;
 	
-	@NotNull
+	@NotEmpty
 	private String lugarEvento;
 	
-	@NotNull
+	@NotEmpty
 	private String fechaEvento;
 	
 	@NotNull

@@ -11,21 +11,19 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ProvidersProvider {
   public API = 'http://localhost:9080';
-    public Events_API = this.API + '/eventos';
+
 
     constructor(public http: HttpClient) {
     }
 
     getEvents(): Observable<any> {
-      return this.http.get(this.API + '/');
+      return this.http.get(this.API + '/todos-eventos');
     }
 
     save(event: any): Observable<any> {
     let result: Observable<Object>;
     if (event['href']) {
       result = this.http.put(event.href, event);
-    } else {
-      result = this.http.post(this.Events_API, event)
     }
     return result.catch(error => Observable.throw(error));
   }
