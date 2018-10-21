@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators, AbstractControl} from '@angular/forms';
 import { IonicPage, NavParams, ViewController} from 'ionic-angular';
-
+import { ProvidersProvider } from '../../providers/providers';
 /**
  * Generated class for the ModalComentariosPage page.
  *
@@ -31,7 +31,7 @@ export class ModalComentariosPage {
         nombreEvento:['',[Validators.required,Validators.maxLength(100)]],
         nombre:['',[Validators.required,Validators.maxLength(100)]],
         asunto:['',[Validators.required,Validators.maxLength(100)]],
-        contacto:['',Validators.pattern("/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/")],
+        contacto:[Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+.+[a-z]{2,4}$")],
         comentario:['',[Validators.required,Validators.maxLength(100)]]
 
       });
@@ -53,6 +53,7 @@ export class ModalComentariosPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ModalPage');
   }
-  validate(){}
+  validate(){
 
+  }
   }

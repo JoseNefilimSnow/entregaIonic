@@ -11,11 +11,10 @@ export class organizadorDeEventosPage {
   constructor(public navCtrl: NavController,public modalCtrl: ModalController) {}
 
   popupOrganizarEvento(){
-    const crearEvento:Modal = this.modalCtrl.create('ModalPage');
+    const crearEvento = this.modalCtrl.create('ModalPage');
     crearEvento.present();
     crearEvento.onDidDismiss((data)=>{
         console.log(data);
     })
   }
-
 }

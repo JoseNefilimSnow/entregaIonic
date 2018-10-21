@@ -37,6 +37,7 @@
         </ion-label>
         <ion-input type="text" formControlName="asunto"></ion-input>
       </ion-item>
+      <ion-item>
       <ion-label>
         Contacto:
       </ion-label>
@@ -46,7 +47,7 @@
       <ion-label>
         Comentario:
       </ion-label>
-      <ion-input type="text" formControlName="comentario"></ion-input>
+      <ion-textarea  formControlName="comentario"></ion-textarea>
     </ion-item>
 
       <button clear ion-button (click)=validate()>Enviar</button>

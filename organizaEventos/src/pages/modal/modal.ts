@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators, AbstractControl} from '@angular/forms';
 import { IonicPage, NavParams, ViewController} from 'ionic-angular';
-
+import { ProvidersProvider } from '../../providers/providers/providers';
+import { NgForm } from '@angular/forms';
 /**
  * Generated class for the ModalPage page.
  *
@@ -26,7 +27,8 @@ export class ModalPage {
 
   constructor(private navParams: NavParams,
     private view:ViewController,
-    private formbuilder:FormBuilder ) {
+    private formbuilder:FormBuilder,
+    public eventProvider:ProvidersProvider) {
       this.formgroup = formbuilder.group({
         nombre:['',[Validators.required,Validators.maxLength(100)]],
         tipo:['',[Validators.required,Validators.maxLength(100)]],
@@ -53,6 +55,12 @@ export class ModalPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ModalPage');
   }
-  validate(){}
+
+  save(form: NgForm) {
+  let update: boolean = form['href'];
+  this.eventProvider.save(form).subscribe(result => {
+  this.dismiss();
+  }, error => this.error = error)
+}
 
 }

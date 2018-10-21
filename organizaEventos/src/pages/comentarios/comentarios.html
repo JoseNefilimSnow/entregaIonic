@@ -6,8 +6,14 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <div class="column leftbig"></div>
-  <div class="column middlebig">
-  </div>
+<ion-content padding>
+    <div class="column leftbig"></div>
+    <div class="column middlebig">
+      <div>
+
+          <button ion-button (click)= "popupComentar()">Comentar</button>
+
+      </div>
+      <div id="contenedorComentarios"></div>
+    </div>
 </ion-content>

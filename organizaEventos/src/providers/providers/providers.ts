@@ -11,12 +11,22 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ProvidersProvider {
   public API = 'http://localhost:9080';
-    public BEER_API = this.API + '/';
+    public Events_API = this.API + '/eventos';
 
     constructor(public http: HttpClient) {
     }
 
-    getGoodBeers(): Observable<any> {
-      return this.http.get(this.API + '/good-beers');
+    getEvents(): Observable<any> {
+      return this.http.get(this.API + '/');
     }
+
+    save(event: any): Observable<any> {
+    let result: Observable<Object>;
+    if (event['href']) {
+      result = this.http.put(event.href, event);
+    } else {
+      result = this.http.post(this.Events_API, event)
+    }
+    return result.catch(error => Observable.throw(error));
+  }
   }
