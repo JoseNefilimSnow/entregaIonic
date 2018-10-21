@@ -17,7 +17,7 @@
 
 
 <ion-content padding>
-  <form [formGroup] = "formgroup">
+  <form [formGroup] = "formgroup" (ngSubmit)="save(formgroup.value)">
     <ion-list>
       <ion-item>
         <ion-label>
@@ -50,8 +50,8 @@
       <ion-textarea  formControlName="comentario"></ion-textarea>
     </ion-item>
 
-      <button clear ion-button (click)=validate()>Enviar</button>
-      <button clear ion-button (click)="closeModal()">Cerrar</button>
+      <button clear ion-button type="submit">Enviar</button>
+      <!--<button clear ion-button (click)="closeModal()">Cerrar</button>-->
     </ion-list>
   </form>
 </ion-content>

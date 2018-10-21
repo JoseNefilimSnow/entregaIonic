@@ -31,8 +31,8 @@ export class ModalComentariosPage {
         nombreEvento:['',[Validators.required,Validators.maxLength(100)]],
         nombre:['',[Validators.required,Validators.maxLength(100)]],
         asunto:['',[Validators.required,Validators.maxLength(100)]],
-        contacto:[Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+.+[a-z]{2,4}$")],
-        comentario:['',[Validators.required,Validators.maxLength(100)]]
+        contacto:[''],
+        comentario:['',[Validators.required,Validators.maxLength(280)]]
 
       });
 
@@ -53,7 +53,16 @@ export class ModalComentariosPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ModalPage');
   }
-  validate(){
-
+  save(form: NgForm) {
+    /**let update: boolean = form['href'];
+    this.events.save(form).subscribe(result => {
+      let toast = this.toastCtrl.create({
+        message: 'Evento "' + form.nombre + '" ' + ((update) ? 'updated' : 'added') + '.',
+        duration: 2000
+      });
+      toast.present();*/
+      this.view.dismiss();
+    /**}, error => this.error = error)
+  }**/
   }
   }

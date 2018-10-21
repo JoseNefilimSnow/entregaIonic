@@ -15,19 +15,7 @@
 
     </div>
     <ion-list>
-      <ion-item-sliding *ngFor="let beer of beers">
-        <ion-item (click)="openModal({id: beer.id})">
-          <ion-avatar item-left>
-            <img src="{{beer.giphyUrl}}">
-          </ion-avatar>
-          <h2>{{beer.name}}</h2>
-        </ion-item>
-        <ion-item-options>
-          <button ion-button color="danger" (click)="remove(beer)">
-            <ion-icon name="trash"></ion-icon> Delete
-          </button>
-        </ion-item-options>
-      </ion-item-sliding>
+      <!--Poner aqui todos los eventos con boton de borrar-->
     </ion-list>
   </div>
 </ion-content>

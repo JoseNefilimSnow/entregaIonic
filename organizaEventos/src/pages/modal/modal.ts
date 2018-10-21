@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {FormBuilder, FormGroup, Validators, AbstractControl} from '@angular/forms';
 import { IonicPage, NavParams, ViewController} from 'ionic-angular';
-import { ProvidersProvider } from '../../providers/providers/providers.ts';
+//import { ProvidersProvider } from '../../providers/providers/providers';
 import { NgForm } from '@angular/forms';
 /**
  * Generated class for the ModalPage page.
@@ -29,7 +29,7 @@ export class ModalPage {
   constructor(private navParams: NavParams,
     private view:ViewController,
     private formbuilder:FormBuilder,
-    private events:ProvidersProvider
+    //private events:ProvidersProvider
     ) {
       this.formgroup = formbuilder.group({
         nombre:['',[Validators.required,Validators.maxLength(100)]],
@@ -50,22 +50,19 @@ export class ModalPage {
   closeModal(){
     this.view.dismiss();
   }
-  closeModalWithSubmit(){
-    const data="enviarDatos"//pasar los datos y enviarlos
-    this.view.dismiss(data);
-  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad ModalPage');
   }
   save(form: NgForm) {
-    let update: boolean = form['href'];
+    /**let update: boolean = form['href'];
     this.events.save(form).subscribe(result => {
       let toast = this.toastCtrl.create({
         message: 'Evento "' + form.nombre + '" ' + ((update) ? 'updated' : 'added') + '.',
         duration: 2000
       });
-      toast.present();
-      this.dismiss();
-    }, error => this.error = error)
+      toast.present();*/
+      this.view.dismiss();
+    /**}, error => this.error = error)
+  }**/
   }
-  }
+}
